@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Valencia Fulfillment brings fulfillment, warehousing, printing, mailing, and delivery services together under one roof. Request a tailored quote.">
+<title>Valencia Fulfillment | From Production to Delivery</title>
+<style>
+:root{
+  --forest:#173f35; --forest-2:#245649; --sage:#dfe9df; --sage-2:#f0f4ef;
+  --ink:#1d2824; --muted:#65716b; --line:#dce3dd; --paper:#fbfcfa;
+  --white:#fff; --gold:#d9a45b; --radius:18px; --shadow:0 16px 45px rgba(23,63,53,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d9a45b;outline-offset:3px}
+.wrap{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--forest-2);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow:before{content:"";width:24px;height:2px;background:var(--gold);display:inline-block}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.08}
+h1{font-size:clamp(2.8rem,6.1vw,5.25rem);max-width:760px;margin:22px 0}
+h2{font-size:clamp(2rem,4vw,3.25rem);margin:14px 0 16px}
+h3{font-size:1.25rem;margin-bottom:10px}
+p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;border-radius:999px;padding:13px 19px;font-weight:750;transition:transform .18s,background .18s,border-color .18s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--forest);color:white}
+.btn-primary:hover{background:var(--forest-2)}
+.btn-outline{border-color:#c9d5cd;background:transparent;color:var(--forest)}
+.btn-light{background:white;color:var(--forest)}
+.btn-small{padding:10px 15px;font-size:.9rem}
+header{position:sticky;top:0;z-index:20;background:rgba(251,252,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,227,221,.8)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;min-width:max-content}
+.brand-mark{width:40px;height:40px;background:var(--forest);color:white;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:1.05rem;letter-spacing:-.06em}
+.brand-name{font-size:1.03rem;font-weight:900;letter-spacing:.09em;line-height:1.1}
+.brand-sub{display:block;font-size:.63rem;letter-spacing:.14em;color:var(--muted);font-weight:750;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:25px;font-size:.9rem;font-weight:650;color:#43534b}
+.nav-links a:hover{color:var(--forest)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:12px;padding:10px 12px;color:var(--forest);font-weight:800}
+.hero{padding:76px 0 60px;overflow:hidden;background:radial-gradient(ellipse at 80% 15%,#e7eee5 0,transparent 35%),var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:50px}
+.hero-copy p{font-size:1.12rem;max-width:570px;margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.trust-note{display:flex;align-items:center;gap:10px;margin-top:25px;color:var(--muted);font-size:.88rem}
+.trust-dot{width:8px;height:8px;background:#5d8a6b;border-radius:50%;box-shadow:0 0 0 5px #e2ece2}
+.hero-art{position:relative;min-height:470px;display:flex;align-items:center;justify-content:center}
+.photo-placeholder{position:absolute;inset:12px 8px 22px 22px;border-radius:28px;background:linear-gradient(145deg,#dfe8df,#c7d8cd 55%,#a9c0b2);overflow:hidden;box-shadow:var(--shadow)}
+.photo-placeholder:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,47,39,.22),transparent 55%)}
+.warehouse-scene{position:absolute;inset:0;opacity:.95}
+.shelf{position:absolute;top:13%;bottom:20%;width:22%;background:repeating-linear-gradient(to bottom,#496f5e 0 7px,transparent 7px 61px);border-left:7px solid #315645;border-right:7px solid #315645}
+.shelf:after{content:"";position:absolute;inset:12px 7px;background:repeating-linear-gradient(to bottom,transparent 0 10px,#c7a574 10px 37px,transparent 37px 61px)}
+.shelf.s1{left:8%}.shelf.s2{left:38%;top:8%;bottom:13%}.shelf.s3{right:8%}
+.floor{position:absolute;left:0;right:0;bottom:0;height:23%;background:linear-gradient(160deg,#d7e0d7,#9db4a5);clip-path:polygon(0 30%,100% 0,100% 100%,0 100%)}
+.box-graphic{position:absolute;bottom:15%;left:34%;width:150px;height:112px;background:#d4b183;border:2px solid #b58e5f;transform:skewY(-5deg);box-shadow:16px 15px 0 rgba(29,66,51,.13)}
+.box-graphic:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:17px;background:#ead5b4;transform:translateX(-50%)}
+.box-graphic:after{content:"VF";position:absolute;left:16px;top:28px;color:#6c573e;font-weight:900;font-size:1.5rem;letter-spacing:.06em}
+.art-label{position:absolute;left:0;bottom:0;max-width:260px;background:white;border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.art-label strong{display:block;color:var(--forest);font-size:1.02rem}
+.art-label span{display:block;color:var(--muted);font-size:.84rem;margin-top:4px}
+.float-card{position:absolute;right:0;top:44px;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);max-width:190px}
+.float-card .mini-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--sage-2);color:var(--forest);font-weight:900;margin-bottom:9px}
+.float-card strong{display:block;font-size:.91rem}
+.float-card small{color:var(--muted)}
+.section{padding:86px 0}
+.section-head{max-width:690px;margin-bottom:34px}
+.section-head p{font-size:1.05rem;max-width:620px}
+.services{background:#fff;border-block:1px solid var(--line)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:white;min-height:220px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-3px);border-color:#a8bcae;box-shadow:0 10px 28px rgba(23,63,53,.06)}
+.icon-box{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--sage-2);color:var(--forest);margin-bottom:22px}
+.icon-box svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.service-card p{font-size:.94rem;margin-bottom:0}
+.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-weight:800;margin-top:18px;font-size:.9rem}
+.benefits{background:var(--sage-2)}
+.benefit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.benefit-panel{background:var(--forest);border-radius:26px;padding:34px;color:white;position:relative;overflow:hidden;min-height:370px}
+.benefit-panel:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-65px;bottom:-85px;box-shadow:0 0 0 28px rgba(255,255,255,.04),0 0 0 56px rgba(255,255,255,.035)}
+.benefit-panel .eyebrow{color:#dce9de}
+.benefit-panel h3{font-size:2rem;max-width:340px;margin-top:20px}
+.benefit-panel p{color:#d4e0d8;max-width:340px}
+.benefit-stamp{position:absolute;bottom:28px;left:34px;font-size:.85rem;color:#dce9de;letter-spacing:.04em}
+.benefit-list{display:grid;gap:24px}
+.benefit-item{display:grid;grid-template-columns:42px 1fr;gap:16px}
+.check{width:38px;height:38px;display:grid;place-items:center;background:white;border:1px solid var(--line);border-radius:12px;color:var(--forest);font-weight:900}
+.benefit-item h3{margin:2px 0 7px;font-size:1.12rem}
+.benefit-item p{margin:0;font-size:.95rem}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+.process-step{border-top:2px solid #c5d4c9;padding-top:18px}
+.step-num{color:#789083;font-weight:900;font-size:.78rem;letter-spacing:.12em}
+.process-step h3{margin:12px 0 8px}
+.process-step p{font-size:.93rem;margin-bottom:0}
+.quote-section{background:#f3f6f2}
+.quote-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:54px;align-items:start}
+.quote-copy p{font-size:1.05rem}
+.contact-options{display:grid;gap:12px;margin-top:28px}
+.contact-option{display:flex;align-items:center;gap:13px}
+.contact-option .icon-box{margin:0;width:42px;height:42px;flex:none}
+.contact-option strong{display:block;font-size:.95rem}
+.contact-option span{display:block;font-size:.87rem;color:var(--muted)}
+.quote-card{background:white;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 10px 35px rgba(23,63,53,.06)}
+.quote-card h3{font-size:1.5rem}
+.quote-card>p{font-size:.92rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:.84rem;font-weight:750;color:#34473d}
+input,select{width:100%;border:1px solid #cfd9d1;border-radius:10px;background:white;padding:12px 13px;color:var(--ink);min-height:46px}
+input::placeholder{color:#8a958e}
+.form-note{font-size:.79rem;color:var(--muted);margin:14px 0}
+.form-message{display:none;border-radius:10px;padding:12px;background:var(--sage-2);color:var(--forest);font-size:.9rem;margin-top:14px}
+.faq{background:white}
+.faq-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:60px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;list-style:none;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:1.35rem;color:var(--forest);font-weight:500}
+details[open] summary:after{content:"−"}
+details p{margin:12px 30px 0 0;font-size:.94rem}
+.cta-band{padding:44px 0;background:var(--forest);color:white}
+.cta-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta-row h2{font-size:clamp(1.8rem,3.3vw,2.65rem);margin:0 0 8px}
+.cta-row p{margin:0;color:#d6e1d9}
+footer{padding:48px 0 25px;background:#112f28;color:white}
+.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:42px;padding-bottom:34px}
+footer p,footer a,footer address{color:#c3d0c7;font-size:.9rem;font-style:normal}
+footer a:hover{color:white}
+footer h3{font-size:.94rem;letter-spacing:0;margin-bottom:16px}
+.footer-links{display:grid;gap:9px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:18px;display:flex;justify-content:space-between;gap:16px;color:#aebfb4;font-size:.8rem}
+.disclaimer{font-size:.75rem;color:#9aaba0;margin-top:12px}
+@media(max-width:960px){
+ .nav-links{gap:14px}.nav-links a{font-size:.84rem}.nav-actions .btn{padding:10px 13px}
+ .hero-grid{gap:25px}.hero-art{min-height:400px}.benefit-grid{gap:35px}.quote-grid{gap:30px}
+}
+@media(max-width:760px){
+ .wrap{width:min(100% - 32px,600px)}
+ .nav{min-height:70px}.menu-toggle{display:block}.nav-actions{margin-left:auto}.nav-actions .btn-outline{display:none}
+ .nav-links{display:none;position:absolute;left:16px;right:16px;top:69px;background:white;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);align-items:stretch;flex-direction:column;gap:0}
+ .nav-links.open{display:flex}.nav-links a{padding:12px 4px;border-bottom:1px solid #edf0ed;font-size:.95rem}.nav-links a:last-child{border-bottom:0}
+ .hero{padding:52px 0 42px}.hero-grid,.benefit-grid,.quote-grid,.faq-grid{grid-template-columns:1fr}
+ .hero-art{min-height:350px;margin-top:12px}.photo-placeholder{inset:10px 14px 18px 10px}.float-card{right:0;top:26px}.art-label{left:0;bottom:0}
+ .section{padding:62px 0}.service-grid{grid-template-columns:repeat(2,1fr)}.service-card{padding:20px;min-height:215px}
+ .benefit-panel{min-height:320px}.process-grid{grid-template-columns:repeat(2,1fr);row-gap:28px}
+ .quote-grid{gap:30px}.faq-grid{gap:10px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+ .cta-row{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:480px){
+ .brand-name{font-size:.9rem}.brand-sub{font-size:.57rem}.brand-mark{width:36px;height:36px}
+ .nav-actions .btn{padding:10px 12px;font-size:.82rem}.nav-actions .btn-primary{display:none}
+ h1{font-size:2.65rem}.hero-copy p{font-size:1rem}
+ .hero-art{min-height:300px}.float-card{max-width:150px;padding:11px}.art-label{max-width:220px;padding:13px}
+ .service-grid{grid-template-columns:1fr}.service-card{min-height:unset}
+ .process-grid{grid-template-columns:1fr 1fr;gap:22px 16px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+ .quote-card{padding:21px}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}
+ .footer-bottom{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Valencia Fulfillment home">
+      <span class="brand-mark">VF</span>
+      <span><span class="brand-name">VALENCIA</span><span class="brand-sub">FULFILLMENT</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#approach">How It Works</a>
+      <a href="#why-valencia">Why Valencia</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline btn-small" href="#client-login" id="loginTop">Client Login ↗</a>
+      <a class="btn btn-primary btn-small" href="#contact">Request a Quote <span aria-hidden="true">→</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Fulfillment, connected</span>
+        <h1>From production to delivery, <span style="color:var(--forest-2)">under one roof.</span></h1>
+        <p>Valencia Fulfillment brings warehousing, order fulfillment, printing, mailing, and delivery together—so your team can focus on what comes next.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Tell Us What You Need <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="#services">Explore Our Services</a>
+        </div>
+        <div class="trust-note"><span class="trust-dot"></span><span>Family-owned fulfillment experience for businesses with different needs.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration representing warehouse fulfillment">
+        <div class="photo-placeholder">
+          <div class="warehouse-scene" aria-hidden="true">
+            <div class="shelf s1"></div><div class="shelf s2"></div><div class="shelf s3"></div>
+            <div class="floor"></div><div class="box-graphic"></div>
+          </div>
+        </div>
+        <div class="float-card">
+          <div class="mini-icon">↗</div>
+          <strong>One coordinated workflow</strong>
+          <small>From materials to mailing</small>
+        </div>
+        <div class="art-label"><strong>Many services. One partner.</strong><span>Flexible support for fulfillment and production needs.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we do</span>
+        <h2>The services behind the delivery.</h2>
+        <p>Whether you need products stored and shipped or printed materials prepared and distributed, Valencia can bring multiple steps together in one place.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="M3 7.5V17l9 4 9-4V7.5M12 12v9"/></svg></div>
+          <h3>Fulfillment & Distribution</h3>
+          <p>Pick, pack, ship, and coordinate B2B distribution to support your order flow.</p>
+          <a class="text-link" href="https://www.valenciafulfillment.com/services/Fulfillment.html">Explore fulfillment <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M7 8V3h10v5M6 18H4a2 2 0 0 1-2-2v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM17 11h.01"/></svg></div>
+          <h3>Printing</h3>
+          <p>Support for color and black-and-white jobs, large-format printing, labels, envelopes, and more.</p>
+          <a class="text-link" href="https://www.valenciafulfillment.com/services/printing.html">Explore printing <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Bindery & Assembly</h3>
+          <p>Bring printed pieces together through finishing, binding, packaging, and special assembly work.</p>
+          <a class="text-link" href="https://www.valenciafulfillment.com/services/printing.html">Discuss your project <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 8l8 6 8-6"/></svg></div>
+          <h3>Mailing Management</h3>
+          <p>Mailing-list support, mail merge, presort options, and postal preparation services.</p>
+          <a class="text-link" href="https://www.valenciafulfillment.com/services/Mailing_Management.html">Explore mailing <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 6h11v12H3zM14 10h4l3 3v5h-7"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></div>
+          <h3>Delivery & Warehousing</h3>
+          <p>Storage and delivery support to help move materials where they need to go.</p>
+          <a class="text-link" href="#contact">Plan a workflow <span>→</span></a>
+        </article>
+        <article class="service-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 4v16M16 4v16M4 9h4M16 15h4"/></svg></div>
+          <h3>Silkscreening & Special Projects</h3>
+          <p>Custom promotional materials and special processing or assembly needs.</p>
+          <a class="text-link" href="https://www.valenciafulfillment.com/services/silkscreening.html">Explore custom work <span>→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section benefits" id="why-valencia">
+    <div class="wrap benefit-grid">
+      <div class="benefit-panel">
+        <span class="eyebrow">A partner, not another handoff</span>
+        <h3>Keep more of the process connected.</h3>
+        <p>Coordinate fulfillment-related services with a team that can support work across storage, production, mailing, and delivery.</p>
+        <span class="benefit-stamp">Valencia Fulfillment · Castaic, California</span>
+      </div>
+      <div>
+        <span class="eyebrow">Why work with Valencia</span>
+        <h2>Built around your workflow.</h2>
+        <p style="margin-bottom:30px">Your operation has its own requirements. Start with the services you need and build a process that fits.</p>
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <span class="check">✓</span>
+            <div><h3>Multiple services in one place</h3><p>Coordinate fulfillment, printing, bindery, mailing, warehousing, and delivery through one partner.</p></div>
+          </div>
+          <div class="benefit-item">
+            <span class="check">✓</span>
+            <div><h3>Flexible to the job</h3><p>Discuss standard workflows, special projects, and the requirements that make your operation unique.</p></div>
+          </div>
+          <div class="benefit-item">
+            <span class="check">✓</span>
+            <div><h3>Visibility for existing clients</h3><p>Use Valencia's existing client access for available order and inventory information. Ask us about the right view for your workflow.</p></div>
+          </div>
+          <div class="benefit-item">
+            <span class="check">✓</span>
+            <div><h3>Experience with a human touch</h3><p>Work with a family-owned company that brings decades of fulfillment experience to client needs.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>A clear path from request to delivery.</h2>
+        <p>Every project is different. Here is a simple starting point for discussing how Valencia can support yours.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step"><span class="step-num">STEP 01</span><h3>Tell us about the work</h3><p>Share the services, materials, volumes, and destinations involved.</p></div>
+        <div class="process-step"><span class="step-num">STEP 02</span><h3>Plan the workflow</h3><p>Valencia reviews your requirements and identifies the services needed.</p></div>
+        <div class="process-step"><span class="step-num">STEP 03</span><h3>Coordinate the process</h3><p>Work with the team on fulfillment, production, storage, mailing, or delivery.</p></div>
+        <div class="process-step"><span class="step-num">STEP 04</span><h3>Stay informed</h3><p>Existing clients can use available client tools and contact Valencia for operational questions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quote-section" id="contact">
+    <div class="wrap quote-grid">
+      <div class="quote-copy">
+        <span class="eyebrow">Let's talk</span>
+        <h2>Tell us what you need. We'll help plan the next step.</h2>
+        <p>Pricing depends on the services and requirements involved. Share a few details so the Valencia team can understand your request and follow up.</p>
+        <div class="contact-options">
+          <a class="contact-option" href="tel:+16617752712">
+            <span class="icon-box"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 5c0-1 1-2 2-2Z"/></svg></span>
+            <span><strong>Call us</strong><span>661-775-2712</span></span>
+          </a>
+          <a class="contact-option" href="mailto:info@valenciafulfillment.com">
+            <span class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg></span>
+            <span><strong>Email us</strong><span>info@valenciafulfillment.com</span></span>
+          </a>
+          <div class="contact-option">
+            <span class="icon-box"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span><strong>Visit Valencia</strong><span>28610 Hasley Canyon Rd, Castaic, CA 91384</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <h3>Request a quote</h3>
+        <p>Start with the basics. You can also call or email us directly.</p>
+        <form id="quoteForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required></div>
+            <div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization" placeholder="Company name" required></div>
+            <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+            <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div>
+            <div class="field full"><label for="service">What can we help with?</label>
+              <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option>Fulfillment & distribution</option><option>Printing & bindery</option><option>Mailing management</option><option>Delivery & warehousing</option><option>Silkscreening / special project</option><option>Multiple services / not sure yet</option>
+              </select>
+            </div>
+            <div class="field full"><label for="volume">Estimated volume or project size (optional)</label><select id="volume" name="volume"><option value="">Choose if known</option><option>Small / one-time project</option><option>Recurring, lower volume</option><option>Recurring, medium volume</option><option>High-volume / complex operation</option><option>Not sure yet</option></select></div>
+            <div class="field full"><button class="btn btn-primary" type="submit" style="width:100%">Prepare Quote Request <span aria-hidden="true">→</span></button></div>
+          </div>
+          <p class="form-note">This is a design prototype. The form does not transmit or store information. Connect it to Valencia's approved form handler before publishing.</p>
+          <div class="form-message" id="formMessage" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="eyebrow">Helpful information</span>
+        <h2>Questions, answered.</h2>
+        <p>Have a question that isn't covered here? Contact the Valencia team directly.</p>
+        <a class="btn btn-outline" href="mailto:info@valenciafulfillment.com">Ask Valencia a Question →</a>
+      </div>
+      <div>
+        <details><summary>What services does Valencia provide?</summary><p>Valencia offers fulfillment, printing, bindery, mailing management, delivery, silkscreening, and warehousing. The right combination depends on your project and requirements.</p></details>
+        <details><summary>How do I get pricing?</summary><p>Pricing is tailored to the work involved. Use the quote form above or contact Valencia by phone or email to discuss your service needs, volumes, and destinations.</p></details>
+        <details><summary>Can Valencia support a combination of services?</summary><p>Valencia presents itself as a one-stop shop for fulfillment-related services, including production, storage, mailing, and shipping. Describe your workflow so the team can determine what fits.</p></details>
+        <details><summary>I'm an existing client. Where can I access order information?</summary><p>Use the client login provided by Valencia. The production version of this website should link directly to the existing approved client portal; this mockup intentionally does not invent a login URL.</p></details>
+        <details><summary>Can Valencia work with ecommerce platforms?</summary><p>Valencia's current website describes integrations with major platforms, including Shopify, Amazon, WooCommerce, and BigCommerce. Contact the team to confirm support for your particular setup.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="client-login">
+    <div class="wrap cta-row">
+      <div><h2>Already working with Valencia?</h2><p>Access your existing client tools or contact the team for help.</p></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-light" href="https://www.valenciafulfillment.com/services/Fulfillment.html" id="portalButton">Find Client Login ↗</a>
+        <a class="btn" style="border-color:rgba(255,255,255,.4);color:white" href="mailto:info@valenciafulfillment.com">Portal Support</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home" style="color:white">
+          <span class="brand-mark" style="background:#dfe9df;color:#173f35">VF</span>
+          <span><span class="brand-name">VALENCIA</span><span class="brand-sub" style="color:#c3d0c7">FULFILLMENT</span></span>
+        </a>
+        <p style="max-width:350px;margin-top:18px">Fulfillment, production, and distribution services designed around the work your business needs to get done.</p>
+      </div>
+      <div><h3>Explore</h3><div class="footer-links"><a href="#services">Services</a><a href="#approach">How It Works</a><a href="#why-valencia">Why Valencia</a><a href="#faq">FAQs</a><a href="#contact">Request a Quote</a></div></div>
+      <div><h3>Contact</h3><div class="footer-links"><a href="tel:+16617752712">661-775-2712</a><a href="mailto:info@valenciafulfillment.com">info@valenciafulfillment.com</a><address>28610 Hasley Canyon Rd<br>Castaic, CA 91384</address></div></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Valencia Fulfillment. All rights reserved.</span><span>Designed for clarity. Built to grow with your workflow.</span></div>
+    <p class="disclaimer">Concept mockup for review. Verify all service descriptions, claims, links, and portal destinations with Valencia before launch.</p>
+  </div>
+</footer>
+<script>
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',String(open));
+  toggle.textContent=open?'Close ×':'Menu ☰';
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Menu ☰';
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('quoteForm').addEventListener('submit',event=>{
+  event.preventDefault();
+  const message=document.getElementById('formMessage');
+  message.style.display='block';
+  message.textContent='Prototype only: no information was sent. Before launch, connect this form to Valencia’s approved quote-request system and add spam protection.';
+});
+document.getElementById('loginTop').addEventListener('click',event=>{
+  event.preventDefault();
+  document.getElementById('client-login').scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
